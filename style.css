@@ -1,0 +1,15 @@
+body {
+  text-align: center;
+}
+
+.material-symbols-outlined:nth-child(3),
+.material-symbols-outlined:nth-child(7) {
+  margin-left: 20px;
+}
+
+#screen {
+  border: 1px solid black;
+  width: 275px;
+  padding: 20px 0px 20px 0px;
+  display: inline-block;
+}
