@@ -26,7 +26,8 @@ document.getElementById("movieSelector").onchange = (evt) => {
     generatedHTML +=
       '<span class="material-symbols-outlined"> event_seat </span>';
   }
-  document.getElementById("seats").innerHTML = selectedMovieSeats;
+  console.log(generatedHTML);
+  document.getElementById("seats").innerHTML = generatedHTML;
 };
 //the function is event
 //document is in the DOM, GEBId is the function built into the DOM that lets you grab the selector, the selector is in quotes because it is the string that belongs to that ID,  The onchange property comes from the document object model, and setting all of that equal to a new function with the parameter of (evt).... this method of formatting gives more control over the scope with '=>'
