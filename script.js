@@ -29,7 +29,7 @@ const movieData = {
 };
 
 console.log(
-  movieData["Roadrunner: A Film About Anthony Bourdain"[1][4].seats.occupied]
+  movieData["Roadrunner: A Film About Anthony Bourdain"].seats[1][3].occupied
 );
 
 document.getElementById("movieSelector").onchange = (evt) => {
@@ -39,21 +39,19 @@ document.getElementById("movieSelector").onchange = (evt) => {
   console.log(selectedMovieSeats);
   let generatedHTML = ""; //javascript placeholder that holds html that shows up
   //get each seat of the selected movie seats >
-  for (const seat of selectedMovieSeats) {
+  for (const row of selectedMovieSeats) {
     //loop over all of the array of seats
-    if (seat.occupied) {
-      generatedHTML += "<div>"; //had to check code before here
-      for (const seat of row) {
-        if (seat.occupied === true) {
-          generatedHTML +=
-            '<span class="material-symbols-outlined occupied"> event_seat </span>';
-        } else {
-          generatedHTML +=
-            '<span class="material-symbols-outlined"> event_seat </span>';
-        }
+    generatedHTML += "<div>"; 
+    for (const seat of row) {
+      if (seat.occupied) {
+        generatedHTML +=
+          '<span class="material-symbols-outlined occupied"> event_seat </span>';
+      } else {
+        generatedHTML +=
+          '<span class="material-symbols-outlined"> event_seat </span>';
       }
     }
-    generatedHTML += "<div>";
+    generatedHTML += "</div>";
   }
   console.log(generatedHTML);
   document.getElementById("seats").innerHTML = generatedHTML;
